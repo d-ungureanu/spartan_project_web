@@ -13,7 +13,7 @@ Your task is to build a web application to manage the trainee records in sparta.
     - course: Course (string)
     - stream: Stream (string)
 
-4-  The system should use Object Oriented to manage the spartan data.
+4-  The system should use Object-Oriented to manage the spartan data.
 5-  Object variables should be dealt with using getters and setters only.
 6-  Organise your code to have main.py that would have all te routes and spartan.py for the Spartan class
 7-  You can test the spartan class by using a main code in the same file, the code should not be executed when this file is called by the main.py
@@ -42,5 +42,5 @@ Working Methodology:
 3-  Use commit after each step from now on
 4-  Start by creating all the routes (at this stage they will only be returning strings to show that they are working)
 5-  Create the Class and test (locally) that you can create an object from the class
-6-  Create a file called management.py and use it to add all the functions that will manage the sprtans
+6-  Create a file called management.py and use it to add all the functions that will manage the spartans
 7-  Use Postman to test your code: create new collection and create a new request for each API that you are testing
