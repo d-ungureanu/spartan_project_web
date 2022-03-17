@@ -1,16 +1,34 @@
-from flask import Flask, request, jsonify
+from flask import Flask, redirect, url_for, render_template, request
+from spartan import Spartan
 
 app = Flask(__name__)
 
 
 @app.route("/", methods=["GET"])
-def index():
-    return "Welcome to app's homepage!"
+def homepage():
+    return render_template("index.html")
 
 
-@app.route("/spartan/add", methods=["POST"])
+@app.route("/add", methods=["GET", "POST"])
 def add_spartan():
-    return "ADD spartan page!"
+    if request.method == "POST":
+        spartan_id = request.form["spartan_id"]
+        firstname = request.form["firstname"]
+        lastname = request.form["lastname"]
+        birthday = request.form["birthday"]
+        birthmonth = request.form["birthmonth"]
+        birthyear = request.form["birthyear"]
+        course = request.form["course"]
+        stream = request.form["stream"]
+        spartan = Spartan(spartan_id, firstname, lastname, birthday, birthmonth, birthyear, course, stream)
+        return spartan
+    else:
+        return render_template("add_details.html")
+
+
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
 
 
 @app.route("/spartan/<spartan_id>", methods=["GET"])
