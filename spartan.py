@@ -10,7 +10,7 @@ class Spartan:
         self.stream = s_st
 
     def __str__(self):
-        return vars(self)
+        return vars(self).__str__()
 
     def get_sparta_id(self):
         return self.sparta_id
